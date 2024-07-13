@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Typography */
+.display-large {
+  font-size: 72px;
+  line-height: 86.4px; /* 120% */
+  letter-spacing: -2%;
+}
+
+.display-medium {
+  font-size: 60px;
+  line-height: 72px; /* 120% */
+  letter-spacing: -2%;
+}
+
+.display-small {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 57.6px; /* 120% */
+  letter-spacing: -2%;
+}
+
+.h1-large {
+  font-size: 48px;
+  line-height: 63.3px; /* 131.875% */
+  letter-spacing: -2%;
+}
+
+.h1-medium {
+  font-size: 40px;
+  line-height: 55.4px; /* 138.5% */
+  letter-spacing: -2%;
+}
+
+.h1-small {
+  font-size: 32px;
+  line-height: 42.2px; /* 131.875% */
+  letter-spacing: -2%;
+}
+
+.h2-large {
+  font-size: 32px;
+  line-height: 42.2px; /* 131.875% */
+  letter-spacing: -2%;
+}
+
+.h2-medium {
+  font-size: 28px;
+  line-height: 36.9px; /* 138.5% */
+  letter-spacing: -2%;
+}
+
+.h2-small {
+  font-size: 24px;
+  line-height: 31.6px; /* 131.875% */
+  letter-spacing: -2%;
+}
+
+.h3-large {
+  font-size: 24px;
+  line-height: 31.6px; /* 131.875% */
+  letter-spacing: -2%;
+}
+
+.h3-medium {
+  font-size: 20px;
+  line-height: 26.4px; /* 138.5% */
+  letter-spacing: -2%;
+}
+
+.h3-small {
+  font-size: 18px;
+  line-height: 23.7px; /* 131.875% */
+  letter-spacing: -2%;
+}
+
+.body-large {
+  font-size: 18px;
+  line-height: 26.4px; /* 146.667% */
+  letter-spacing: 1%;
+}
+
+.body-medium {
+  font-size: 16px;
+  line-height: 23.5px; /* 146.875% */
+  letter-spacing: 1%;
+}
+
+.body-small {
+  font-size: 14px;
+  line-height: 20.5px; /* 146.429% */
+  letter-spacing: 1%;
+}
+
+.label-large {
+  font-size: 18px;
+  line-height: 25.3px; /* 140.556% */
+  letter-spacing: 1%;
+}
+
+.label-medium {
+  font-size: 16px;
+  line-height: 22.5px; /* 140.625% */
+  letter-spacing: 1%;
+}
+
+.label-small {
+  font-size: 14px;
+  line-height: 19.7px; /* 140.714% */
+  letter-spacing: 1%;
+}

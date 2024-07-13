@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "Madingku Class Management",
+        "link": "https://madingku.vercel.app/",
+        "photo": "https://i.pinimg.com/474x/39/0d/57/390d5758376f14fc315f96d9ac06df63.jpg",
+        "pinned": true
+    },
+    {
+        "id": 2,
+        "title": "Madingku Class Management",
+        "link": "https://madingku.vercel.app/",
+        "photo": "https://i.pinimg.com/474x/39/0d/57/390d5758376f14fc315f96d9ac06df63.jpg",
+        "pinned": false
+    },
+    {
+        "id": 3,
+        "title": "Madingku Class Management",
+        "link": "https://madingku.vercel.app/",
+        "photo": "https://i.pinimg.com/474x/39/0d/57/390d5758376f14fc315f96d9ac06df63.jpg",
+        "pinned": false
+    }
+]
