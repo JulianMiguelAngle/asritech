@@ -11,7 +11,8 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "gradient-orange": "linear-gradient(180deg, #D96816 0%, #EB8338 100%)"
+        "gradient-orange-100": "linear-gradient(180deg, #EB8338 20%, #E86F17 80%)",
+        "gradient-orange-0": "linear-gradient(180deg, #EC8C46 20%, #EB8338 80%)",
       },
       lineHeight: {
         'display-large': '86.4px',

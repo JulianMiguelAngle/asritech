@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 html {
+  scroll-behavior: smooth !important;
   box-sizing: border-box;
   font-size: 16px;
 }
@@ -26,112 +27,15 @@ img {
   height: auto;
 }
 
-/* Typography */
-.display-large {
-  font-size: 72px;
-  line-height: 86.4px; /* 120% */
-  letter-spacing: -2%;
+.project {
+  @apply relative overflow-hidden rounded-tl-[20px] rounded-tr-[20px] flex flex-col;
+  @apply h-[400px] sm:h-[500px] min-w-[360px] max-w-[360px] sm:min-w-[500px] sm:max-w-[500px];
 }
 
-.display-medium {
-  font-size: 60px;
-  line-height: 72px; /* 120% */
-  letter-spacing: -2%;
+.project:nth-child(3n + 1) {
+  @apply md:min-w-[584px] md:max-w-[584px] lg:min-w-[700px] lg:max-w-[700px];
 }
 
-.display-small {
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 57.6px; /* 120% */
-  letter-spacing: -2%;
-}
-
-.h1-large {
-  font-size: 48px;
-  line-height: 63.3px; /* 131.875% */
-  letter-spacing: -2%;
-}
-
-.h1-medium {
-  font-size: 40px;
-  line-height: 55.4px; /* 138.5% */
-  letter-spacing: -2%;
-}
-
-.h1-small {
-  font-size: 32px;
-  line-height: 42.2px; /* 131.875% */
-  letter-spacing: -2%;
-}
-
-.h2-large {
-  font-size: 32px;
-  line-height: 42.2px; /* 131.875% */
-  letter-spacing: -2%;
-}
-
-.h2-medium {
-  font-size: 28px;
-  line-height: 36.9px; /* 138.5% */
-  letter-spacing: -2%;
-}
-
-.h2-small {
-  font-size: 24px;
-  line-height: 31.6px; /* 131.875% */
-  letter-spacing: -2%;
-}
-
-.h3-large {
-  font-size: 24px;
-  line-height: 31.6px; /* 131.875% */
-  letter-spacing: -2%;
-}
-
-.h3-medium {
-  font-size: 20px;
-  line-height: 26.4px; /* 138.5% */
-  letter-spacing: -2%;
-}
-
-.h3-small {
-  font-size: 18px;
-  line-height: 23.7px; /* 131.875% */
-  letter-spacing: -2%;
-}
-
-.body-large {
-  font-size: 18px;
-  line-height: 26.4px; /* 146.667% */
-  letter-spacing: 1%;
-}
-
-.body-medium {
-  font-size: 16px;
-  line-height: 23.5px; /* 146.875% */
-  letter-spacing: 1%;
-}
-
-.body-small {
-  font-size: 14px;
-  line-height: 20.5px; /* 146.429% */
-  letter-spacing: 1%;
-}
-
-.label-large {
-  font-size: 18px;
-  line-height: 25.3px; /* 140.556% */
-  letter-spacing: 1%;
-}
-
-.label-medium {
-  font-size: 16px;
-  line-height: 22.5px; /* 140.625% */
-  letter-spacing: 1%;
-}
-
-.label-small {
-  font-size: 14px;
-  line-height: 19.7px; /* 140.714% */
-  letter-spacing: 1%;
+.project:nth-child(3n + 2), .project:nth-child(3n + 3) {
+  @apply md:min-w-[500px] md:max-w-[500px] lg:min-w-[500px] lg:max-w-[500px];
 }

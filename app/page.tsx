@@ -1,20 +1,25 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import project from "./project.json";
 
 import Star from "@assets/Star.svg";
 import Rooster from "@assets/Rooster.svg";
 import Dollars from "@assets/Dollars.avif";
+import Mail from "@assets/Mail icon.svg";
+import Chat from "@assets/Chat icon.svg"
 
 import { Navbar } from "@components/Navbar";
+import { Footer } from "@components/Footer";
 
 export default function Home() {
   return (
+    <>
     <main className="px-4 md:px-16 flex min-h-screen flex-col gap-y-36">
       <Navbar />
 
       <section className="flex flex-col items-center text-center">
-        <article className={`
+        <article id="home" className={`
           max-w-[600px] font-bold text-neutral-700 relative  
           text-display-small sm:text-display-medium lg:text-display-large leading-display-small sm:leading-display-medium lg:leading-display-large tracking-display
         `}>
@@ -36,13 +41,13 @@ export default function Home() {
           />
 
           <Image
-            className="absolute top-[70px] right-4"
+            className="absolute top-[70px] right-4 sm:top-[20px]"
             src={Star}
             alt="Star vector"
           />
 
           <Image
-            className="absolute top-[120px] left-0"
+            className="absolute top-[120px] left-0 lg:top-[140px]"
             src={Star}
             alt="Star vector"
           />
@@ -51,12 +56,13 @@ export default function Home() {
         </article>
 
         <h2 className="text-neutral-600 text-body-small sm:text-body-medium lg:text-body-large">
-          Young developers and designers who are passionate about learning and developing.
+          Asri Tech is a collective consisting of young people who are passionate about learning and developing.
         </h2>
       </section>
 
+      <section className="pb-80 flex flex-col gap-y-52">
       <section>
-        <label htmlFor="" className="w-full h-fit flex bg-neutral-white-100">
+        <label id="what-we-make" className="w-full h-fit flex bg-neutral-white-100">
 
           <span className="pb-3 pr-3 block bg-neutral-0 rounded-br-xl">
             <h1 className={`
@@ -225,12 +231,12 @@ export default function Home() {
         </section>
       </section>
 
-      <section>
-        <label htmlFor="" className={`w-full h-fit flex bg-neutral-0`}>
+      <section className="max-w-[1352px]">
+        <label id="what-have-we-done" className={`w-full h-fit flex bg-neutral-0`}>
 
           <span className="pr-3 block bg-neutral-0">
             <h1 className={`
-                py-4 px-6 bg-additional-purple text-neutral-0 font-bold rounded-2xl sm:rounded-[20px] lg:rounded-3xl 
+                py-4 px-6 bg-primary-400 text-neutral-0 font-bold rounded-2xl sm:rounded-[20px] lg:rounded-3xl 
                 text-h1-small leading-h1-small sm:text-h1-medium sm:leading-h1-medium lg:text-h1-large lg:leading-h1-large tracking-heading
               `}>
               So..
@@ -246,7 +252,7 @@ export default function Home() {
           `} />
         </label>
 
-        <label htmlFor="" className={`
+        <label className={`
           w-full h-fit flex bg-neutral-white-100
           after:w-full after:min-w-[80px] after:h-full after:flex after:bg-neutral-0
         `}>
@@ -256,7 +262,7 @@ export default function Home() {
             rounded-br-2xl rounded-tr-2xl sm:rounded-br-[20px] sm:rounded-tr-[20px]
           `}>
             <h1 className={`
-                py-4 px-6 bg-additional-purple min-w-[230px] sm:w-max text-neutral-0 font-bold rounded-2xl sm:rounded-[20px] lg:rounded-3xl 
+                py-4 px-6 bg-primary-400 min-w-[230px] sm:w-max text-neutral-0 font-bold rounded-2xl sm:rounded-[20px] lg:rounded-3xl 
                 text-h1-small leading-h1-small sm:text-h1-medium sm:leading-h1-medium lg:text-h1-large lg:leading-h1-large tracking-heading
               `}>
               What has Asri Tech done?
@@ -265,24 +271,23 @@ export default function Home() {
         </label>
 
         <section className={`
-          pt-16 lg:pt-20 bg-neutral-white-100 flex flex-col lg:flex-row items-center justify-center gap-24 overflow-hidden  
+          pt-16 pb-4 px-4 md:px-12 bg-neutral-white-100 flex lg:flex-row lg:flex-wrap gap-6 md:gap-12 overflow-x-scroll
           rounded-[16px_0_16px_16px] sm:rounded-[20px_0_20px_20px] lg:rounded-[24px_0_24px_24px]
         `}>
           {project.map((project) => {
             return (
               <article key={project.id + project.title} 
-                className={`
-                  relative overflow-hidden
-                  w-[360px] h-[500px] rounded-tl-[20px] rounded-tr-[20px] flex flex-col
-                `}
-              >
-                <Image
-                  src={project.photo}                
-                  alt={`Photo project ${project.title}`}
-                  height={400}
-                  width={400}
-                  className="h-full w-full object-cover"
-                />
+                className="project">
+                
+                <section className="px-4 h-full w-full object-cover rounded-br-2xl overflow-hidden bg-neutral-0">
+                  <Image
+                    src={project.photo}                
+                    alt={`Photo project ${project.title}`}
+                    height={500}
+                    width={500}
+                    className="h-full w-full object-cover"
+                  />
+                </section>
 
                 {project.pinned && (
                   <p className={`
@@ -295,19 +300,27 @@ export default function Home() {
 
                 <section className="flex">
                   <h1 className={`
+                    w-full p-2 px-[18px] bg-neutral-0 rounded-bl-2xl rounded-br-2xl flex items-center font-medium
                     text-label-small sm:text-h2-medium lg:text-h2-large leading-label-small sm:leading-h2-medium lg:leading-h2-large tracking-heading
                   `}>
                     { project.title }
                   </h1>
                   
-                  <span className="pt-4 pl-4 block rounded-tl-2xl sm:rounded-tl-[20px] lg:rounded-tl-3xl">
-                    <a href={project.link} className={`
-                      p-4 bg-gradient-orange text-neutral-0 font-medium rounded-2xl sm:rounded-[20px] lg:rounded-3xl
-                      text-h3-small sm:text-h3-medium lg:text-h3-large leading-h3-small sm:leading-h3-medium lg:leading-h3-large tracking-heading
+                  <div className="bg-neutral-0">
+                    <span className={`
+                      h-full pt-2 pl-2 flex bg-neutral-white-100
+                      rounded-tl-2xl sm:rounded-tl-[20px] lg:rounded-tl-3xl
                     `}>
-                      Check&nbsp;out&nbsp;👀
-                    </a>
-                  </span>
+                      <a href={project.link} className={`
+                        h-full flex items-center
+                        p-4 sm:px-4 bg-gradient-orange-100 hover:bg-gradient-orange-0 text-neutral-0 font-medium rounded-2xl
+                        text-h3-small sm:text-h3-medium lg:text-h3-large leading-h3-small sm:leading-h3-medium lg:leading-h3-large tracking-heading
+                      `}>
+                        Check&nbsp;out&nbsp;👀
+                      </a>
+                    </span>
+                  </div>
+
                 </section>
               </article>
             );
@@ -316,8 +329,70 @@ export default function Home() {
         </section>
       </section>
 
-      <p>Asri Tech is a collective consisting of young developers and designers who are passionate about learning and developing.</p>
-      {/* <Footer /> */}
+      <section className="flex flex-col gap-y-8 sm:items-center">
+
+        <label htmlFor="" 
+          className="flex flex-col sm:flex-row gap-y-1 sm:gap-x-[18px] items-start sm:items-center">
+          <h1 className={`
+            font-bold text-neutral-700
+            text-h1-small sm:text-h1-medium lg:text-h1-large leading-h1-small sm:leading-h1-medium lg:leading-h1-large tracking-heading
+          `}>
+            Allright
+          </h1>
+
+          <h2 className={`
+            text-neutral-600
+            text-h3-small sm:text-h3-medium lg:text-h3-large leading-h3-small sm:leading-h3-medium lg:leading-h3-large tracking-heading
+          `}>
+            Is there a contact I can reach?
+          </h2>
+        </label>
+
+        <section className="flex flex-col items-center sm:flex-row gap-6 select-none">
+          <Link href={"mailto:asriitech@gmail.com"} 
+            className="w-fit flex items-center gap-x-6 py-4 px-3 rounded-3xl bg-neutral-white-100">
+            <Image
+              src={Mail}
+              alt="Mail icon"
+            />
+
+            <section className="flex flex-col gap-y-2 text-neutral-700 text-body-small sm:text-body-medium lg:text-body-large tracking-body">
+              <h1>mailto:</h1>
+              <h2>asriitech@gmail.com</h2>
+            </section>
+          </Link>
+
+          <Link href={"https://api.whatsapp.com/send?phone=6285956235320&text=Hi%20Asri%20Tech%20Team,%20I%20am%20interested%20in%20website%20creation%20services.%20Can%20we%20discuss%20further?"}
+          className="w-fit flex items-center gap-x-6 py-4 px-3 rounded-3xl bg-neutral-white-100">
+            <Image
+              src={Chat}
+              alt="Chat icon"
+            />
+
+            <section className="flex flex-col gap-y-2 text-neutral-700 text-body-small sm:text-body-medium lg:text-body-large tracking-body">
+              <h1>whatsapp:</h1>
+              <h2>+62 859-5623-5320</h2>
+            </section>
+          </Link>
+        </section>
+
+        <section className={`
+          flex flex-wrap gap-2.5 justify-center select-none
+          *:py-4 *:px-5 *:rounded-3xl *:bg-neutral-white-100 *:text-neutral-600
+            *:text-label-small *:sm:text-label-medium *:lg:text-label-large *:tracking-body
+          `}>
+          <Link href={"https://www.fiverr.com/asri_tech"}>Fiverr</Link>
+          <Link href={"https://www.instagram.com/asritech.id/"}>Instagram</Link>
+          <Link href={"https://www.pinterest.com/asriitech/"}>Pinterest</Link>
+          {/* <Link href={"https://www.instagram.com/asritech.id/"}>Dribbble</Link> */}
+          {/* <Link href={"https://www.instagram.com/asritech.id/"}>Behance</Link> */}
+        </section>
+      </section>
+      </section>
+
     </main>
+
+    <Footer />
+    </>
   );
 }
